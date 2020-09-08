@@ -1,4 +1,9 @@
 <p align="center">
+  <h1 align="center" style="font-size: 48px;">⚠️ Development of Dashchat v2 will soon start ⚠️</h1>
+  <p align="center">You are all invited to discuss about the design specs in <a href="https://github.com/fayeed/dash_chat/issues/127">#127</a>, the v1 can still be used but do not expect additional development in it. You can still open issues for the v1 to indicate things we need to implement/fix in the v2</p>
+</p> 
+<hr>
+<p align="center">
   <img src="https://media.giphy.com/media/ghBkB5BHQgdhamZ2WA/giphy.gif" />
   <h1 align="center" style="font-size: 48px;">💬 Dash Chat</h1>
   <h5 align="center">The most complete Chat UI for flutter</h5>
@@ -158,6 +163,21 @@ ChatMessage(
 - `quickReplyScroll` (bool) - Should the quick reply options be horizontally scrollable
 - `quickReplyPadding` (EdgeInsetsGeometry) - Padding for QuickReply
 - `inputDisabled` (bool) - Should the input TextField be disabled, defaults to `false`
+- `messageDecorationBuilder` (BoxDecoration Function(ChatMessage, isUser) - Override the message container decoration. [Note: This will override the messageContainerDecoration ]
+
+  ```dart
+  DashChat(
+    ...
+    messageDecorationBuilder: (ChatMessage msg, bool isUser){
+      return BoxDecoration(
+        ...
+        color: isUser ? Colors.red : Colors.blue, // example
+        ...
+      );
+    },
+    ...
+  );
+  ```
 
 ## Credits 👨🏻‍💻
 
